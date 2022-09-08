@@ -14,9 +14,7 @@
 mod cli;
 
 fn main() {
-    // Print from another file.
-    // print::run();
+    
     cli::run();
-
 
 }
