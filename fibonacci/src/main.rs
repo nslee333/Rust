@@ -2,6 +2,6 @@ fn main() {
     
 }
 
-fn fibonacci(number: u32) {
+fn fibonacci(number: i32) -> i32 {
     
 }
