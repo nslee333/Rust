@@ -1,8 +1,13 @@
 use std::io;
 use rand::Rng;
 use std::cmp::Ordering;
+// mod guessing_game_v2;
 
 fn main() {
+
+    // guessing_game_v2::run();
+
+
     println!("Guess the number!");
 
     let secret_number = rand::thread_rng().gen_range(1..=100);
