@@ -1,19 +1,14 @@
-struct CustomSmartPointer {
-    data: String,
-}
-
-impl Drop for CustomSmartPointer {
-    fn drop(&mut self) {
-        println!("Dropping CustomSmartPointer with data`{}`!", self.data);
-    }
-}
+use blog::Post;
 
 fn main() {
-    let c = CustomSmartPointer {
-        data: String::from("My stuff."),
-    };
+    let mut post = Post::new();
 
-    println!("CustomSmartPointer created.");
-    drop(c);
-    println!("CustomSmartPointer dropped before the end of main.");
+    post.add_text("I ate a salad for lunch today.");
+    assert_eq!("", post.content());
+
+    post.request_review();
+    assert_eq!("", post.content());
+
+    post.approve();
+    assert_eq!("I ate a salad for lunch today.", post.content());
 }
